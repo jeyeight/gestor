@@ -1,4 +1,4 @@
-# gestor
+# Gestor
 Projeto de gestão de estoque usando PHP puro
 Caso acabe trombando com esse repositório, não espere nada profissional ou sofisticado kkkkkkkkk.
 Primeiro projeto que subo de fato no Github, o resto estava tudo remoto.
