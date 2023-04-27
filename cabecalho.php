@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="bootstrap/bootstrap.css">
 </head>
 </html>
-<h1>
+<h1 style="padding-left:10px; background-color: grey;">
     <a href="index.php" class="btn btn-primary">Início</a>
+    <hr>
 </h1>
-<hr>
