@@ -1,7 +1,14 @@
 <?php
 //Conexão realizada com a base de dada, estou usando o Workbench como 
-$PDO = new PDO("mysql:dbname=teste;host=localhost","root","");
-$sql = $PDO->query("SELECT * FROM produtos;");
-$dados = $sql->fetchAll(PDO::FETCH_ASSOC);
-print_r( $dados);
+class CONEXAO{
+
+    private $dbname = 'teste';
+    private $host = 'localhost';
+    private $user = 'root';
+    private $password = '';
+    public $PDO;
+    public function __construct(){
+        $this->PDO = new PDO("mysql:dbname={$this->dbname};host={$this->host}","{$this->user}","{$this->password}");
+    }
+}
 ?>
