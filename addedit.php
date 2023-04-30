@@ -6,7 +6,7 @@ $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);
 $edicao = !is_null($id);
 if($edicao){
     $info = $classe->info_prod($id);
-    $info = $info[0];
+    $_GET['edicao'] = $edicao;
 }
 ?>
 <!DOCTYPE html>
@@ -20,43 +20,41 @@ if($edicao){
 </head>
 <body>
     <div class="container">
-        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuemin="0" aria-valuemax="100">
-        <div div class="progress-bar"></div>
-        </div>
-        <form action="formaccept.php" method="get">
-                <div class ="container d-flex justify-content-start row">
-                    <div class="container d-flex justify-content-start col Order-first">
-                        <div class="container d-flex justify-content-start text-center form-group" >
+        <form action="formaccept.php" method="POST">
+            <input type="hidden" name="id" value="<?= isset($info) ? $info['id'] : '' ?>">
+                <div class ="container d-flex row">
+                    <div class="container d-flex col">
+                        <div class="container d-flex text-center form-group col-4" >
                             <label class="form-label">
                                 Nome do Produto:
-                                <input type="text" name="nomeProduto" placeholder="Nome" value = <?php $edicao ? $info[0]['nome'] : '' ?> class="input-group-text col" required >
+                                <input type="text" name="nomeProduto" placeholder="Nome"  value = "<?= isset($info) ? $info['nome'] : '' ?>" class="input-group-text col" required  >
                             </label>
                         </div>
-                        <div class="container d-flex justify-content-start text-center form-group">
+                        <div class="container d-flex text-center form-group col-4">
                             <label>
                                 Quantidade disponível:
-                            <input type="number" name="nmrProduto" placeholder="N°" min="0" class="input-group-text col"  required >
+                            <input type="number" name="nmrProduto" placeholder="N°" value = "<?= isset($info) ? $info['estoque'] : '' ?>" min="0" class="input-group-text col"  required >
                             </label>
                         </div>
-                        <div class="container d-flex justify-content-start text-center form-group">
+                        <div class="container d-flex text-center form-group col-4">
                             <label class="form-label">
                                 Preço do Produto (Unidade):
-                                <input type="number" name="precoProduto" placeholder="Preço" class="input-group-text col"  step="0.01" required >
+                                <input type="number" name="precoProduto" placeholder="Preço" value ="<?= isset($info) ? $info['preco'] : '' ?>" class="input-group-text col"  step="0.01" required >
                             </label>
                         </div>
                     </div>
                     </div>
 
                     <div class ="container d-flex justify-content-center col text-center form-group">
-                        <div class=""></div>
-                            <div class = "container d-flex col-12">
-                                <label class="form-label">
-                                    Descrição/Especificações do produto:
-                                        <textarea name="especProduto" placeholder="Descrição" id="desc" class="input-group-text align-itens-start justify-content-end"></textarea>
-                                    </label>
-                            </div>
-                        <div class =""></div>
+                        <div class="container col-3"></div>
+                        <div class = "container d-flex justify-content-center col-6">
+                            <label class="form-label">
+                                Descrição/Especificações do produto:
+                                <textarea maxlength="200" name="especProduto" placeholder="Descrição" id="desc" resize="none" max="100" class="input-group-text align-itens-start justify-content-end"><?= isset($info) ? $info['descricao'] : '' ?></textarea>
+                            </label>
                         </div>
+                        <div class="container col-3"></div>
+                    </div>
                         <div class ="container d-flex justify-content-center row">
                             <button type="submit" class = "btn btn-success">Salvar</button>
                         </div>
