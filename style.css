@@ -2,7 +2,11 @@
     background-color: #0d6efd;
 }
 #desc{
-    height:200px;
+    height:165px;
+    width:300px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: none;
 }
 
 input::-webkit-outer-spin-button,
