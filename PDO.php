@@ -6,9 +6,20 @@ class CONEXAO{
     private $host = 'localhost';
     private $user = 'root';
     private $password = '';
-    public $PDO;
-    public function __construct(){
-        $this->PDO = new PDO("mysql:dbname={$this->dbname};host={$this->host}","{$this->user}","{$this->password}");
-    }
+    private $conex;
+    
+     public function conexao() {
+        $this->conex = null;
+
+        try {
+          $this->conex = new PDO("mysql:dbname={$this->dbname};host={$this->host}","{$this->user}","{$this->password}");
+          $this->conex->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch(PDOException $e) {
+          echo 'Erro de conexão: ' . $e->getMessage();
+        }
+    
+        return $this->conex;
+      }
 }
+
 ?>

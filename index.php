@@ -17,12 +17,18 @@ $listagem = $classe->listagem();
 <?php
 foreach($listagem as $lista):
     if(!is_null($lista)):
-?>
-<div class="container row">
-    <h2><?=$lista['nome']?></h2>
-    <p>Estoque atual: <?=$lista['estoque']?></p>
-</div>
-<?php
+    ?>
+    <div class="container row">
+        <h2><?=$lista['nome']?></h2>
+        <p>Estoque atual: <?=$lista['estoque']?></p>
+    </div>
+    <a href="Delete?id=<?=$lista['id']?>">
+        <img src="bootstrap/icons/trash3.svg" alt="Delete" title="Delete">
+    </a>
+    <a href="addedit?id=<?=$lista['id']?>">
+        <img src="bootstrap/icons/pencil-square.svg" alt="Delete" title="Delete">
+    </a>
+    <?php
     endif;
 endforeach;
 ?>

@@ -1,4 +1,14 @@
-<?php include_once("cabecalho.php"); ?>
+<?php 
+include_once("cabecalho.php"); 
+include_once("Produto.php");
+$classe = new Produto();
+$id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);
+$edicao = !is_null($id);
+if($edicao){
+    $info = $classe->info_prod($id);
+    $info = $info[0];
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,7 +29,7 @@
                         <div class="container d-flex justify-content-start text-center form-group" >
                             <label class="form-label">
                                 Nome do Produto:
-                                <input type="text" name="nomeProduto" placeholder="Nome" class="input-group-text col" required >
+                                <input type="text" name="nomeProduto" placeholder="Nome" value = <?php $edicao ? $info[0]['nome'] : '' ?> class="input-group-text col" required >
                             </label>
                         </div>
                         <div class="container d-flex justify-content-start text-center form-group">
