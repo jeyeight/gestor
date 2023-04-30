@@ -2,13 +2,13 @@
 require_once('pdo.php');
 class Produto extends CONEXAO{
     public $id ;
-    public function listagem(){
-
+    public $filtro;
+    public function listagem($filtro = ''){
         $sql = "SELECT * FROM produtos";
+        $filtro != '' ? $sql .= " WHERE nome LIKE '%{$filtro}%'" : ''; 
         $stmt = $this->conexao()->query($sql);
         $lista = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $lista;
-
     }
     public function info_prod($idProduto){
         $sql = "SELECT * FROM produtos WHERE id = $idProduto";
@@ -21,12 +21,12 @@ class Produto extends CONEXAO{
         $stmt = $this->conexao()->prepare($sql);
         $stmt->execute([$idProduto]);
     }
-    public function nmr_produtos() {
+    public function nmr_produtos($filtro = '') {
         $sql = "SELECT COUNT(*) FROM produtos";
+        $filtro != '' ? $sql .= " WHERE nome LIKE '%{$filtro}%'" : '';
         $stmt = $this->conexao()->query($sql);
         $nmr = $stmt->fetchColumn();
         return $nmr;
     }
-
 }
 ?>
