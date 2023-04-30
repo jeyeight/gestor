@@ -1,8 +1,9 @@
 <?php 
 include_once("cabecalho.php"); 
 include_once("Produto.php"); 
-$classe = new Produto();
-$listagem = $classe->listagem();
+$classe   = new Produto();
+$filtro   = filter_input(INPUT_GET, "filtro", FILTER_SANITIZE_SPECIAL_CHARS);
+$listagem = $classe->listagem($filtro);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -14,14 +15,20 @@ $listagem = $classe->listagem();
     <title>Gerenciador de Estoque</title>
 </head>
 <body>
+    <?php
+    if($classe->nmr_produtos() > 0):
+    ?>
     <div class="ml-3">
-        <p>N° de produtos cadastrados: <?=$classe->nmr_produtos();?></p>
+        <p>N° de produtos cadastrados: <?=$classe->nmr_produtos($filtro);?></p>
     </div>
+    <?php
+    endif;
+    ?>
 <?php
 foreach($listagem as $lista):
     if(!is_null($lista)):
     ?>
-    <div class="container col">
+    <div class="container col item">
         <div class="container col">
             <h2><?=$lista['nome']?></h2>
             <div class="row">
@@ -29,7 +36,7 @@ foreach($listagem as $lista):
                     <p>Estoque atual: <?=$lista['estoque']?></p>
                 </div>
                 <div class="col">
-                    <p>Preço: <?=$lista['preco']?></p>
+                    <p>Preço: R$<?=number_format($lista['preco'], 2, ',', '.');?></p>
                 </div>
                 <?php if($lista['descricao']):?>
                 <div class="col">

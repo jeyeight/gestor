@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap/bootstrap.css">
     <link rel="stylesheet" href="style.css">
-    <script src="bootstrap/bootstrap.js"></script>
     <title>Gestor</title>
 </head>
 <body>
     <div class="row">
         <div class="container d-flex" id="header">
             <a href="index.php" class="btn btn-primary col rounded-0 header">Início</a>
-            <input type="text" placeholder="Pesquise aqui"class="input-group-text col rounded-0" >
+            <form action="index.php"><input type="text" name="filtro" value="<?=isset($_GET['filtro']) ? $_GET['filtro'] : ''?>" placeholder="Pesquise (Enter)"class="input-group-text col rounded-0"></form>
             <a href="addedit.php" class="btn btn-primary col rounded-0 header">Adicionar</a>
         </div>
     </div>
+    <script src="bootstrap/bootstrap.js"></script>
 </body>
 </html>
