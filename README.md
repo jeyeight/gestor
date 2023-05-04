@@ -50,6 +50,7 @@ Usando Bootstrap (primeira vez) para agilizar um pouco a questão estilística j
 <li>Colocar um limite de produtos por página. </li>
 <li>Permitir o usuário escolher o mínimo de estoque em %.</li>
 <li>Código para cada produto.</li>
+<li>Histórico de alteração de cada produto com hora e usuário apontado.</li>
 </ul>
 
 <p>Por enquanto é isso, algumas coisinhas ai são fáceis e outras são mais elaboradas, mas como o projeto já tem seu alicerce, vou deixar pra fazer conforme o tempo.<p>
