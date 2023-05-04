@@ -48,7 +48,7 @@ Usando Bootstrap (primeira vez) para agilizar um pouco a questão estilística j
 <li>Contador de caracteres para o campo de descrição.</li>
 <li>Tornar a filtragem dinâmica,ao invés de fazer uma query e ter que recarregar a página.</li>
 <li>Colocar um limite de produtos por página. </li>
-<li>Permitir o usuário escolher o mínimo de estoque de outras formas </li>
+<li>Permitir o usuário escolher o mínimo de estoque em %.</li>
 <li>Código para cada produto.</li>
 </ul>
 
