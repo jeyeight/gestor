@@ -1,6 +1,7 @@
 <?php 
 include_once("cabecalho.php"); 
 include_once("Produto.php"); 
+
 $classe   = new Produto();
 $filtro   = filter_input(INPUT_GET, "filtro", FILTER_SANITIZE_SPECIAL_CHARS);
 $listagem = $classe->listagem($filtro);
@@ -30,7 +31,14 @@ foreach($listagem as $lista):
     ?>
     <div class="container col item">
         <div class="container col">
-            <h2><?=$lista['nome']?></h2>
+            <?php
+            if($lista['estoque'] <= $lista['estoque_minimo']):
+                echo "<h2 style='color: red;'>". $lista['nome']. " <img class = 'bi bi-exclamation-triangle text-warning' src='bootstrap/icons/exclamation-triangle.svg' alt='Estoque baixo' title='Estoque baixo'></h2>";
+            else:
+                echo "<h2>". $lista['nome']. "</h2>";
+            endif;
+            ?>
+        
             <div class="row">
                 <div class="col">
                     <p>Estoque atual: <?=$lista['estoque']?></p>
@@ -44,12 +52,14 @@ foreach($listagem as $lista):
                 </div>
                 <?php endif;?>
             </div class="d-flex mt-3">
+                <a href="addedit?id=<?=$lista['id']?>&edicao=true">
+                    <img src="bootstrap/icons/pencil-square.svg" alt="Editar" title="Editar">
+                </a>
                 <a href="delete?id=<?=$lista['id']?>">
                     <img src="bootstrap/icons/trash3.svg" alt="Excluir" title="Excluir">
                 </a>
-                <a href="addedit?id=<?=$lista['id']?>">
-                    <img src="bootstrap/icons/pencil-square.svg" alt="Editar" title="Editar">
-                </a>
+                <br>
+                <?= $lista['data_alteracao'] != '0000-00-00 00:00:00' ? 'Última alteração: '.date('H:i:s - d/m/Y',strtotime($lista['data_alteracao'])) : ''; ?>
                 <hr>
             </div>
     </div>
