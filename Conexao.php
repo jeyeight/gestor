@@ -2,7 +2,7 @@
 //Conexão realizada com a base de dada, estou usando o Workbench como 
 class CONEXAO{
 
-    private $dbname = 'teste';
+    private $dbname = 'sys';
     private $host = 'localhost';
     private $user = 'root';
     private $password = '';
