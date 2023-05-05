@@ -5,7 +5,7 @@ class Produto extends CONEXAO{
     public $filtro;
     public function listagem($filtro = ''){
         $sql = "SELECT * FROM produtos";
-        $filtro != '' ? $sql .= " WHERE nome LIKE '%{$filtro}%'" : ''; 
+        $filtro != '' ? $sql .= " WHERE nome LIKE '{$filtro}%'" : ''; 
         $stmt = $this->conexao()->query($sql);
         $lista = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $lista;
