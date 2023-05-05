@@ -1,13 +1,13 @@
 # Gestor
 <h1> O que é esse projeto ? </h1>
 
-<p>Primeiro projeto que subo de fato aqui na plataforma, o demais eram todos remotos e nada esquematizados.</p>
-<p> Projeto de gestão de estoque usando PHP puro. Caso acabe trombando com esse repositório, não espere nada profissional ou sofisticado kkkk.</p>
+<p>Primeiro projeto que subo de fato aqui na plataforma, os demais eram todos remotos e nada esquematizados.</p>
+<p> Projeto de gestão de estoque usando PHP puro.</p>
 
 <p>Treinando um pouco da linguagem e versionamento. 
 Usando Bootstrap (primeira vez) para agilizar um pouco a questão estilística já que o foco não é o CSS.</p>
 
-<p>Estou tirando as coisas da cabeça pra fazer isso daqui, não peguei inspiração de nenhum lugar, então talvez pudesse implementar algumas partes de maneira mais eficiente. Estou avaliando isso conforme faço outras partes e vou reavaliando o que já foi feito. Qualquer sugestão ou comentário é bem-vindo.</p>
+<p>Estou tirando as coisas da cabeça pra fazer isso daqui, não peguei inspiração de nenhum lugar, então talvez pudesse implementar algumas partes de maneira mais eficiente. Estou avaliando isso conforme faço outras partes e vou reavaliando o que já foi feito. Qualquer sugestão ou comentário seria de grande ajuda.</p>
 
 <h1>O projeto</h1>
 <p>Bom, pensei em fazer este sistema de gestão de estoque, pois vi que poderia aplicar vários conceitos.</p>
@@ -46,7 +46,7 @@ Usando Bootstrap (primeira vez) para agilizar um pouco a questão estilística j
 <li>Filtragens com base em outros parâmetros.</li>
 <li>Máscaras para os inputs.</li>
 <li>Contador de caracteres para o campo de descrição.</li>
-<li>Tornar a filtragem dinâmica,ao invés de fazer uma query e ter que recarregar a página.</li>
+<li>Tornar a filtragem dinâmica, ao invés de fazer uma query e ter que recarregar a página.</li>
 <li>Colocar um limite de produtos por página. </li>
 <li>Permitir o usuário escolher o mínimo de estoque em %.</li>
 <li>Código para cada produto.</li>
