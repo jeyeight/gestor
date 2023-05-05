@@ -1,5 +1,5 @@
 <?php
-//Conexão realizada com a base de dada, estou usando o Workbench como 
+//Substitua $dbname, $host, $user e $password pelas informações relativas ao seu banco de dados mysql
 class CONEXAO{
 
     private $dbname = 'sys';
