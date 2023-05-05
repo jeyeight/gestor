@@ -52,10 +52,10 @@ foreach($listagem as $lista):
                 </div>
                 <?php endif;?>
             </div class="d-flex mt-3">
-                <a href="addedit?id=<?=$lista['id']?>&edicao=true">
+                <a href="addedit.php?id=<?=$lista['id']?>&edicao=true">
                     <img src="bootstrap/icons/pencil-square.svg" alt="Editar" title="Editar">
                 </a>
-                <a href="delete?id=<?=$lista['id']?>">
+                <a href="delete.php?id=<?=$lista['id']?>">
                     <img src="bootstrap/icons/trash3.svg" alt="Excluir" title="Excluir">
                 </a>
                 <br>
