@@ -51,6 +51,7 @@ Usando Bootstrap (primeira vez) para agilizar um pouco a questão estilística j
 <li>Permitir o usuário escolher o mínimo de estoque em %.</li>
 <li>Código para cada produto.</li>
 <li>Histórico de alteração de cada produto com hora e usuário apontado.</li>
+<li>Gráficos indicando a oscilação de um determinado produto/categoria durante uma faixa de tempo especificada.</li>
 </ul>
 
 <p>Por enquanto é isso, algumas coisinhas ai são fáceis e outras são mais elaboradas, mas como o projeto já tem seu alicerce, vou deixar pra fazer conforme o tempo.<p>
