@@ -7,7 +7,7 @@
 <p>Treinando um pouco da linguagem e versionamento. 
 Usando Bootstrap (primeira vez) para agilizar um pouco a questão estilística já que o foco não é o CSS.</p>
 
-<p>Estou tirando as coisas da cabeça pra fazer isso daqui, não peguei inspiração de nenhum lugar, então talvez pudesse implementar algumas partes de maneira mais eficiente. Estou avaliando isso conforme faço outras partes e vou reavaliando o que já foi feito. Qualquer sugestão ou comentário seria de grande ajuda.</p>
+<p>Estou tirando as coisas da cabeça pra fazer isso daqui, não peguei inspiração de nenhum lugar, então talvez pudesse implementar algumas partes de maneira mais eficiente. Estou avaliando isso conforme avanço o projeto e vou reavaliando o que já foi feito. Qualquer sugestão ou comentário seria de grande ajuda.</p>
 
 <h1>O projeto</h1>
 <p>Bom, pensei em fazer este sistema de gestão de estoque, pois vi que poderia aplicar vários conceitos.</p>
