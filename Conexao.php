@@ -2,7 +2,7 @@
 //Substitua $dbname, $host, $user e $password pelas informações relativas ao seu banco de dados mysql
 class CONEXAO{
 
-    private $dbname = 'sys';
+    private $dbname = 'gestor';
     private $host = 'localhost';
     private $user = 'root';
     private $password = '';
